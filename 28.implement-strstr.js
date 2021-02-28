@@ -14,27 +14,19 @@ function strStr(haystack, needle) {
     if(needle === ''){
         return 0
     }
-    if(haystack.length < needle.length) return  -1
-    let index = -1
-    let count = 0
-    for(let i=0;i<haystack.length;i++){
-        debugger
-        if(haystack[i] === needle[count]){
-            if(count === 0){
-                index = i
-            }
-            if(count === needle.length-1){
-                break
-            }
-            count ++
+    for(let i = 0, b = 0; i < haystack.length; i++) {
+        if(haystack[i] === needle[b]) {
+            b++;
+        } else {
+            i -= b;
+            b = 0;
         }
-        else {
-            index = -1
-            count = 0
+
+        if(b === needle.length) {
+            return  i - b + 1;
         }
     }
-
-    return index
+    return -1;
 }
 
 let str = "mississippi"
