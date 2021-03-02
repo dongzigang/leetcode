@@ -4,12 +4,12 @@
  * @return {string}
  */
 var countAndSay = function(n) {
-  let resultList = [1]
+  let resultList = ['1']
   for(let i = 1; i < n; i++){
-    let item = itemHandle(resultList[i-1].toString())
+    let item = itemHandle(resultList[i-1])
     resultList.push(item)
   }
-  return resultList[resultList.length-1].toString()
+  return resultList[resultList.length-1]
 };
 function itemHandle(item){
   let count = 0 //个数
