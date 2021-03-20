@@ -18,7 +18,7 @@
 var searchInsert = function(nums, target) {
   let left = 0, right = nums.length
   while (left < right){
-    let mid = left + parseInt((right-left)/2)
+    let mid = left + parseInt((right - left) / 2)
     if(nums[mid] >= target){
       right = mid
     }
